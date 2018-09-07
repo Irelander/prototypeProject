@@ -1,0 +1,5 @@
+input(type="file")
+img(src="{{currentFile}}" style="width: 500px ; height: 500px")
+button.extract-btn extract
+each colorList
+  p(style="background-color: rgb({{value.r}}, {{value.g}}, {{value.b}})") {{label}}({{value.getPopulation}})

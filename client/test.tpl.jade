@@ -1,0 +1,85 @@
+.container
+  form#form(enctype="multipart/form-data")
+    table
+      thead
+        tr
+          th
+            p 옵션
+          th
+            p 선택 값
+          th
+            p 파일
+      tbody
+        tr
+          td
+            p 사진 종류
+          td
+            span
+              input(type='radio' name='style' value='art' id='artwork' checked)
+              label(for='artwork') ARTWORK
+            span
+              input(type='radio' name='style' value='photo' id='photo')
+              label(for='photo') PHOTO
+          td(rowspan='3')
+            .file-field
+              .btn.green.darken-2.waves-effect.waves-light
+                span File
+                input(type='file')
+        tr
+          td
+            p 노이즈 레벨
+          td
+            span
+              input(type='radio' name='noise' value='-1' id='nonoise' checked)
+              label(for='nonoise') None
+            span
+              input(type='radio' name='noise' value='0' id='low')
+              label(for='low') Low
+            span
+              input(type='radio' name='noise' value='1' id='med')
+              label(for='med') Medium
+            span
+              input(type='radio' name='noise' value='2' id='high')
+              label(for='high') High
+            span
+              input(type='radio' name='noise' value='3' id='highest')
+              label(for='highest') Highest
+
+        tr
+          td
+            p 확대 배율
+          td
+            span
+              input(type='radio' name='scale' value='-1' id='noscale' checked)
+              label(for='noscale') None
+            span
+              input(type='radio' name='scale' value='1' id='one')
+              label(for='one') 1.6x
+            span
+              input(type='radio' name='scale' value='2' id='two')
+              label(for='two') 2x
+            span
+              input(type='radio' name='scale' value='3' id='three')
+              label(for='three') 3.2x
+            span
+              input(type='radio' name='scale' value='4' id='four')
+              label(for='four') 4x
+        tr
+          td(colspan='3' style='text-align:center;')
+            .btn.waves-effect.waves-light.purple.lighten-2
+              span.start 진행하기
+
+  .row#resultArea(style="position:relative;")
+    if loading
+      .col.s12(style='position:absolute; top:0; left:0; width: 1280px; min-height:500px; background-color:rgba(0,0,0,0.3); display:flex; justify-content:center; align-items:center; transition:opacity .1s ease-in-out')
+        .aa
+          img(src="/loading.svg")
+          h3(style='text-align:center; color:white;') {{percent}}
+    .col.s6(style='text-align:center;')
+      h3 Origin File
+    .col.s6(style='text-align:center;')
+      h3 Convert File
+    .col.s6#origin(style='border: 1px solid; padding:0')
+    .col.s6#convert(style='border: 1px solid; padding:0')
+    .col.s12#button(style='text-align:center;')
+

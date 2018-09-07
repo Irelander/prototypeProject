@@ -1,0 +1,58 @@
+.container
+  form
+    table
+      thead
+        tr
+          th
+            p -
+          th
+            p(style="text-align:center;") 선택 값
+          th
+            p 파일
+      tbody
+        tr
+          td
+            p 옵션
+          td
+            span
+              input(type='text' id='colorThreshold' style="width:8%;" value="15")
+              label(for='colorThreshold') colorThreshold
+            span
+              input(type='text' id='blurRadius' style="width:8%;" value="5")
+              label(for='blurRadius') blurRadius
+            span
+              input(type='text' id='simplifyTolerant' style="width:8%;" value="0")
+              label(for='simplifyTolerant') simplifyTolerant
+            span
+              input(type='text' id='simplifyCount' style="width:8%;" value="30")
+              label(for='simplifyCount') simplifyCount
+            span
+              input(type='text' id='hatchLength' style="width:8%;" value="4")
+              label(for='hatchLength') hatchLength
+            span
+              input(type='text' id='hatchOffset' style="width:8%;" value="0")
+              label(for='hatchOffset') hatchOffset
+          td
+            .file-field
+              .btn.green.darken-2.waves-effect.waves-light
+                span File
+                input(type='file')
+        tr
+          td(colspan='3' style='text-align:center;')
+            .btn.waves-effect.waves-light.purple.lighten-2
+              span.start 진행하기
+
+  .row
+    .col.s12(style='text-align:center;')
+      h6 Pattern List
+    .col.s12#convert
+      each patternList
+        .pattern-images(style="background-image: url('{{this}}')" class="{{isSelectPattern}}")
+    .col.s12(style='text-align:center;')
+      h3 Work Space
+    .col.s12#origin
+      .canvas-wrapper
+        img#backgroundImage()
+        canvas#fuzzyArea(onmouseup="onMouseUp.apply(this, arguments)" onmousedown="onMouseDown.apply(this, arguments)" onmousemove="onMouseMove.apply(this, arguments)")
+    .col.s12#button(style='text-align:center;')
+

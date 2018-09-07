@@ -1,0 +1,30 @@
+.canvas-wrapper{
+    position: relative;
+    text-align: center;
+}
+
+#fuzzyArea {
+    position: absolute;
+    margin: 0 auto;
+}
+
+#backgroundImage {
+    position: absolute;
+    margin: 0 auto;
+}
+
+#convert {
+    text-align: center;
+}
+
+.pattern-images {
+    width: 18%;
+    height: 100px;
+    margin: 5px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.pattern-images.active {
+    border: 2px solid red;
+}
